@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/utility.css">
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- boostrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <title>  Registro</title>
+  <link rel="shortcut icon" href="imagenes/index-icono.ico">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-6 side-image"></div>
+        <div class="col-md-6 right">
+          <div class="input-box">
+            <form action="registro.php" method="post">
+              <h1>- Crear cuenta -</h1>
+              <div class="input-field">
+                <input type="text" name="nombre" class="input" required autocomplete="off">
+                <label for="nombre">Nombre</label>
+              </div>
+
+              <div class="input-field">
+                <input type="text" name="correo" class="input" required autocomplete="off">
+                <label for="email">Correo Electrónico</label>
+              </div>
+
+              <div class="input-field">
+                <input type="password" name="pass" class="input" id="regPassword" required>
+                <label for="regPassword">Contraseña</label>
+                    <div class="eye-area">
+                        <div class="eye-box" onclick="myRegPassword()">
+                        <i class="fa-regular fa-eye" id="eye-2"></i>
+                        <i class="fa-regular fa-eye-slash" id="eye-slash-2"></i>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="input-field">
+                <input type="submit" name="btnregistrar" class="submit" value="Regístrate">
+              </div>
+
+              <div class="signin">
+                <span>¿Ya tienes una cuenta? <a href="index.html">Inicia Sesión</a></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- js -->
+    <script src="js/login.js"></script>
+</body>
+</html>

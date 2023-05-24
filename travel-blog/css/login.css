@@ -1,0 +1,159 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+  background: #ececec;
+  padding: 0 20px 0 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.row {
+  width: 900px;
+  height: 550px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.side-image {
+  background-image: url('../imagenes/index-img.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 10px 0 0 10px;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.input-box {
+  width: 330px;
+  box-sizing: border-box;
+}
+
+.input-box h1 {
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 45px;
+  color: #986C43;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 10px 0 10px;
+  color: #364037;
+  font-weight: 900;
+
+}
+
+.input {
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.input-box .input-field label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-field .input:focus ~ label {
+  top: -10px;
+  font-size: 13px;
+}
+
+.input-field .input:valid ~ label {
+  top: -10px;
+  font-size: 13px;
+}
+
+.input-field .input:focus, .input-field .input:valid {
+  border-bottom: 1.2px solid #364037;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  height: 45px;
+  background: #ececec;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.145);
+  border-radius: 5px;
+  font-weight: 700;
+  color: #986C43;
+  transition: 0.4s;
+}
+
+.submit:hover {
+  background: #986C43;
+  border-radius: 15px;
+  font-weight: 700;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+  color: #fff;
+}
+
+.signin{
+  text-align: center;
+  font-size: small;
+  margin-top: 25px;
+}
+
+span a{
+  text-decoration: none;
+  font-weight: 700;
+  color: #364037;
+  transition: .5s;
+}
+
+span a:hover{
+  text-decoration: underline;
+  color: #364037;
+}
+
+/* ver contraseña */
+.eye-area {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.eye-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+i {
+  position: absolute;
+  color: #986C43;
+  cursor: pointer;
+}
+
+#eye, #eye-2 {
+  opacity: 1;
+}
+
+#eye-slash, #eye-slash-2 {
+  opacity: 0;
+}
