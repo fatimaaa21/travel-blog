@@ -278,6 +278,10 @@ header {
     width: 33rem;
 }
 
+.guide-right p {
+    color: #000;
+}
+
 /* seccion de galeria */
 header.header-sm {
     min-height: 60vh;
@@ -410,19 +414,28 @@ header.header-sm {
 
 /* seccion de publico */
 #formulario {
-    width: 400px;
+    width: 55%;
+    height: 22rem;
     align-items: center;
     align-content: center;
+    margin: auto;
     background-color: #F0D290;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
     color: var(--green);
     position: relative;
-    left: 28rem;
     top: -80px;
     box-shadow: 0px 0px 18px -4px rgba(14, 13, 13, 0.2);
+    display: flex;
+    justify-content: space-between;
 }
+
+#formulario .A, #formulario .B {
+    margin-left: 50px;
+    display: inline-block;
+}
+
 
 p {
     font-weight: 900;
@@ -446,14 +459,17 @@ p {
     box-shadow: 0px 0px 18px -4px rgba(14, 13, 13, 0.64);
 }
 
-.btnform {
-    margin-top: 1rem;
+.btnForm {
     background-color: var(--green);
     color: #fff;
     border-radius: 50px;
     border: none;
     padding: 0.5rem;
     width: 150px;
+    top: 19rem;
+    left: 8rem;
+    margin: auto;
+    position: absolute;
     font-weight: 400;
     box-shadow: 0px 0px 18px -4px rgba(14, 13, 13, 0.64);
 }
@@ -463,25 +479,119 @@ p {
     transition: var(--trans);
 }
 
-#close-form {
-    background: none;
-    width: 35px;
-    height: 35px;
-    color: var(--green);
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 999;
+/* alerta si no estas registrado */
+.alert-info {
+    padding: 15px;
+    border-radius: 15px;
+    display: grid;
+    margin: auto;
+    position: relative;
+    align-content: center;
+    text-align: center;
+    top: -80px;
+    width: 30%;
+    background-color: var(--green);
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0px 0px 18px -4px rgba(14, 14, 14, 0.3);
+}
+
+.bi-info-circle {
+    font-size: 2rem;
+}
+
+/* agregar comentario dentro de una publicación */
+.form-group {
+    display: flex;
+}
+
+.form-control{
+    border-radius: 50px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-left: 20px;
+    width: 100%;
     border: none;
-    font-size: 1.5rem;
-    transition: var(--trans);
+    outline: 2px solid var(--green);
+    position: relative;
+    top: -30px;
+    flex: 1;
+}
+
+#text-input::-webkit-input-placeholder {
+    font-size: 1rem;
+    color: var(--green);
+}
+
+.input-icon {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    font-size: 20px;
+    color: var(--green);
+    right: -0.5rem;
+    top: -2rem;
+}
+
+/* ver comentarios */
+.cont {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+    margin: 1rem auto;
+    align-content: center;
+    border-radius: 15px;
+}
+  
+.comments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: var(--brown);
+    overflow-y: scroll;
+    padding: 3px;
+    display: none; /* Ocultar inicialmente */
+}
+  
+.show-comments {
+    color: var(--brown);
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+}
+  
+.close-comments {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.not-coment{
+    color: var(--brown);
+    font-size: 20px;
+    text-align: center;
 }
 
 /* agregar imagen */
 .img-area {
-    top: 20px;
-	position: relative;
-	width: 100%;
+    top: 90px;
+	position: absolute;
+	width: 40%;
 	height: 180px;
     margin-bottom: 30px;
     border: 4px dashed var(--brown);
@@ -534,14 +644,14 @@ p {
 }
 
 .select-image {
-	display: block;
-	width: 50%;
-    margin: auto;
-    padding: 0;
+	width: 120%;
     border-radius: 50px;
 	background: var(--brown);
 	color: #fff;
 	border: none;
+    position: relative;
+    top: 30px;
+    left: 50px;
 	cursor: pointer;
 	transition: var(--trans);
     box-shadow: 0px 0px 18px -4px rgba(14, 13, 13, 0.64);
@@ -566,12 +676,13 @@ p {
 
 .public-left img {
     border-radius: 15px;
-    margin-left: 15px;
+    margin-left: 20px;
     width: 350px;
 }
 
 .public-right {
     text-align: center;
+    margin-right: 20px;
 }
 
 .public-right span {
@@ -672,9 +783,25 @@ ul li:hover .titulo {
     transition-delay: 0.25s;
 }
 
-.cs {
-    position: absolute;
-    right: 60px;
-    font-weight: 800;
+.tab-button {
+    background-color: transparent;
+    border: none;
     color: #fff;
+    position: absolute;
+    left: 53rem;
+}
+
+.tab-content {
+    display: none;
+    position: absolute;
+    left: 45.5rem;
+    top: 2rem
+}
+
+.opc {
+    color: #fff;
+}
+
+.tab-content.active {
+display: block;
 }

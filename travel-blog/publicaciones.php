@@ -1,23 +1,34 @@
 <?php
-require "conexion.php";
+session_start();
 
-$pais = $_POST["pais"];
-$contenido = $_POST["texto"];
-$imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+    // Obtener el contenido de la publicación del formulario
+    $pais = $_POST["pais"];
+    $contenido = $_POST["texto"];
+    $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 
-// Crear publicacion
-if(isset($_POST["btnPublicar"]))
-{
-    $query = "INSERT INTO publicaciones (pais,contenido,imagen) VALUES ('$pais','$contenido','$imagen')";
-    $resultado = $conn->query($query);
-    
-    if($resultado)
-    {
-        echo "window.location='publico.php' </script>";
+    // Validar los datos si es necesario
+
+    // Guardar la publicación en la base de datos
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "blog";
+
+    $con = mysqli_connect($servername, $username, $password, $dbname);
+    if (!$con) {
+        die("Conexión fallida: " . mysqli_connect_error());
     }
-    else
-    {
-        echo "Error: ".$sqlgrabar."<br>".mysqli_error($conn);
+
+    // Preparar la consulta SQL para insertar la publicación
+    $sql = "INSERT INTO publicaciones (pais, contenido, imagen) VALUES ('$pais', '$contenido','$imagen')";
+
+    if (mysqli_query($con, $sql)) {
+        // Publicación guardada exitosamente
+        echo "<script> window.alert('¡Publicación creada exitosamente!'); window.location='publico.php'</script>";
+    } else {
+        // Error al guardar la publicación
+        echo "<script> window.alert('¡Error al crear la publicación');" . mysqli_error($con). "</script>";
     }
-}
+
+    mysqli_close($con);
 ?>
